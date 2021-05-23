@@ -71,7 +71,8 @@ class ServiceCapabilities(object):
             if (not capability.is_block and
                     capability.fs_type and
                     capability.fs_type not in CONF.SUPPORTED_FS_TYPES):
-                return 'Unsupported file system type'
+                return 'Unsupported file system type: ' +  capability.fs_type + \
+                       '. Supported types are: ' + str(CONF.SUPPORTED_FS_TYPES)
 
         return None
 
